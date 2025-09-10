@@ -1,10 +1,10 @@
 score = 0
 def enterToContinue():
-    input("<<<Press (Enter) to continue>>>")
+    input("\n<<<Press (Enter) to continue>>>\n")
 def endScore():
     enterToContinue()
     print(f"\nYour final score:\n\t{score} points")
-    print("\n\n\t\tGame Over!!!")
+    print("\n\n\t\tGame Over!!!\n")
 def badEnding():
     print("You miss out on your opportunity to gain incredibly useful skills.\nYou Lose!")
     endScore()
@@ -16,7 +16,7 @@ def goodEnding():
     endScore()
 
 print("You are standing alone in a room full of people. Around you are tables with chairs set behind them, and people with lanyards sit at the tables, smiling and patiently waiting for anyone to walk up and talk to them. You notice a person sitting at a table marked \"Computer Technology Department\" beckoning you to come towards them.")
-goToTable = input("Do you go to the table? (y/n):")
+goToTable = input("Do you go to the table? \n(y/n):")
 
 if goToTable.casefold() == "n".casefold() or goToTable.casefold() == "no".casefold(): 
     print("You ignore the people at the table, and you miss out on your chance to gain important skills.")
@@ -28,7 +28,7 @@ elif goToTable.casefold() != "y".casefold() and goToTable.casefold() != "yes".ca
     badEnding()
 else: 
     print("As you approach, you notice literature on the table that describes various degree options within the school of Computer Technology.")
-    numLiteratureGrabbed = input("How many pieces of literature do you grab? (0-4):")
+    numLiteratureGrabbed = input("How many pieces of literature do you grab? \n(0-4):")
     grabbed = numLiteratureGrabbed
     grabNormal = True
     try:
@@ -58,7 +58,7 @@ else:
         score -= greedPenalty
         print(f"That's way too many! You lose {greedPenalty} points for being greedy, and your score is now {score}, but the people at the table still seem interested in talking to you.")
         enterToContinue()
-    name = input("A person at the table asks you your name. What do you tell them? (name):")
+    name = input("A person at the table asks you your name. What do you tell them? \n(name):")
     if not isinstance(name, str):
         print(f"\"Huh, well I'm not sure how I'll put that on the form, but it's nice to meet you {str(name)}")
         enterToContinue()
@@ -67,7 +67,7 @@ else:
         enterToContinue()
     print(f"Hey so {str(name)}, we'd really like you to consider joining one of our Computer Technology programs.")
     enterToContinue()
-    joinDecision = input("Would you like to join our school? (y/n):")
+    joinDecision = input("Would you like to join our school? \n(y/n):")
     if joinDecision.casefold() == "n".casefold() or joinDecision.casefold() == "no".casefold():
         declineAward = 20
         score += declineAward
