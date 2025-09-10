@@ -1,6 +1,6 @@
 score = 0
 def enterToContinue():
-    input("<<<Press <Enter> to continue>>>")
+    input("<<<Press (Enter) to continue>>>")
 def endScore():
     enterToContinue()
     print(f"\nYour final score:\n\t{score} points")
@@ -32,8 +32,9 @@ else:
     grabNormal = True
     try:
         numLiteratureGrabbed = int(numLiteratureGrabbed)
-    except ValueError:
+    except (TypeError, ValueError):
         grabNormal = False
+        numLiteratureGrabbed = 0
     if numLiteratureGrabbed < 0:
         grabNormal = False
     if not grabNormal:
