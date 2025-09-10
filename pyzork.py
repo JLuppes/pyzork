@@ -2,7 +2,7 @@ score = 0
 
 
 def enterToContinue():
-    input("\n\{\{\{Press (Enter) to continue\}\}\}\n")
+    input("\n<<<Press [Enter] to continue>>>\n")
 
 
 def endScore():
@@ -75,6 +75,7 @@ else:
         enterToContinue()
     name = input(
         "A person at the table asks you your name. What do you tell them? \n(name):")
+    # This check is not currently functional - all input() results are strings
     if not isinstance(name, str):
         print(
             f"\"Huh, well I'm not sure how I'll put that on the form, but it's nice to meet you {str(name)}")
