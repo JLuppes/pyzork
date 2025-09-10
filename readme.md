@@ -1,6 +1,6 @@
 # PyZork
 
-A simple demo Python program that uses simple text maniuplation and inputs to 
+A simple demo Python program that uses simple text maniuplation and inputs to
 provide an interactive experience.
 
 ## Installation
