@@ -18,17 +18,18 @@ def goodEnding():
 print("You are standing alone in a room full of people. Around you are tables with chairs set behind them, and people with lanyards sit at the tables, smiling and patiently waiting for anyone to walk up and talk to them. You notice a person sitting at a table marked \"Computer Technology Department\" beckoning you to come towards them.")
 goToTable = input("Do you go to the table? (y/n):")
 
-if goToTable.casefold() == "n".casefold(): 
+if goToTable.casefold() == "n".casefold() or goToTable.casefold() == "no".casefold(): 
     print("You ignore the people at the table, and you miss out on your chance to gain important skills.")
     enterToContinue()
     badEnding()
-elif goToTable.casefold() != "y".casefold():
+elif goToTable.casefold() != "y".casefold() and goToTable.casefold() != "yes".casefold():
     print("Not sure what you mean by that. Times up!")
     enterToContinue()
     badEnding()
 else: 
     print("As you approach, you notice literature on the table that describes various degree options within the school of Computer Technology.")
     numLiteratureGrabbed = input("How many pieces of literature do you grab? (0-4):")
+    grabbed = numLiteratureGrabbed
     grabNormal = True
     try:
         numLiteratureGrabbed = int(numLiteratureGrabbed)
@@ -40,7 +41,7 @@ else:
     if not grabNormal:
         weirdGrabAward = 2
         score += weirdGrabAward
-        print(f"Um, I'm not even sure how you would grab {str(numLiteratureGrabbed)} pamphlets, soooooo.....")
+        print(f"Um, I'm not even sure how you would grab {str(grabbed)} pamphlets, soooooo.....")
         enterToContinue()
         print(f"(Good effort for trying though, here's {weirdGrabAward} point(s) for doing something unexpected)")
         enterToContinue()
@@ -67,13 +68,19 @@ else:
     print(f"Hey so {str(name)}, we'd really like you to consider joining one of our Computer Technology programs.")
     enterToContinue()
     joinDecision = input("Would you like to join our school? (y/n):")
-    if joinDecision.casefold() == "n".casefold():
+    if joinDecision.casefold() == "n".casefold() or joinDecision.casefold() == "no".casefold():
         declineAward = 20
         score += declineAward
         print(f"Well, we're a little disappoined, but we appreciate you coming this far. Here, take {declineAward} points as a consolation prize.")
         enterToContinue()
         declineEnding()
-    elif joinDecision.casefold() == "y".casefold():
+    elif joinDecision.casefold() != "y".casefold() and joinDecision.casefold() != "yes".casefold():
+        stoppedByAward = 20
+        score += stoppedByAward
+        print(f"Um, ok, I'm not sure what you mean by that. But thanks for stopping by, here take {stoppedByAward} points just for visiting us!")
+        enterToContinue()
+        declineEnding()
+    else :
         joinAward = 100
         score += joinAward
         print(f"That's wonderful! As a thank-you gift for joining, here's a special scholarship of {joinAward} points!")
